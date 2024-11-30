@@ -50,7 +50,6 @@ exports.usersCreatePost = [
     const result = validationResult(req);
 
     if (!result.isEmpty()) {
-      console.log(result.errors);
       return res.status(400).render("createUser", {
         title: "Create user",
         errors: result.errors,
@@ -108,6 +107,5 @@ exports.usersDeletePost = (req, res) => {
 exports.usersSearchGet = (req, res) => {
   const { search } = req.query;
   const users = usersStorage.searchUsers(search);
-  console.log(users);
   res.render("search", { title: "Search results", users });
 };
