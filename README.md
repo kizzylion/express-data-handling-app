@@ -1,4 +1,4 @@
-# express-ddata-handling-app
+# express-data-handling-app
 
 ## Description
 

@@ -31,12 +31,13 @@ const validateUser = [
     .isLength({ min: 1, max: 10 })
     .withMessage(`last name ${lengthErr}`),
   body("email").isEmail().withMessage("Invalid email"),
+  // age is optional
   body("age")
-    .optional()
+    .optional({ values: "falsy" })
     .isInt({ min: 18, max: 120 })
     .withMessage("Age must be a number between 18 to 120"),
   body("bio")
-    .optional()
+    .optional({ values: "falsy" })
     .isLength({ max: 200 })
     .withMessage("Bio must be less than 200 characters"),
 ];
